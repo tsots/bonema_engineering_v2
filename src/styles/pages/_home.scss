@@ -1,0 +1,32 @@
+.container.greetings {
+  padding-block: 4rem 1.5rem;
+}
+
+.container.services,
+.container.benefits,
+.container.features,
+.container.greeting {
+  padding-block: 1.5rem 4rem;
+
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+.container.greeting > :not(.image),
+.card > :not(.image),
+.intro {
+  padding-inline: 1.2rem;
+}
+
+.content,
+.card > :not(.image) {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.card {
+  display: grid;
+  row-gap: 0.5rem;
+  padding-block: 1.2em 1.2rem;
+}

@@ -1,0 +1,23 @@
+$xs-scr: 480px;
+$sm-scr: 620px;
+$md-scr: 768px;
+$lg-scr: 1024px;
+$xl-scr: 1440px;
+
+$breakpoints: (
+  xs: $xs-scr,
+  sm: $sm-scr,
+  md: $md-scr,
+  lg: $lg-scr,
+  xl: $xl-scr,
+);
+
+@mixin mq($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is NOT a valid breakpoint name.";
+  } @else {
+    @media (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}

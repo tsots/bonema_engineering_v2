@@ -1,0 +1,13 @@
+.mobile {
+  //   background-color: magenta;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.desktop {
+  display: none !important;
+  @media (min-width: 768px) {
+    display: block;
+    // background-color: teal;
+  }
+}
