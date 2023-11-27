@@ -2,6 +2,12 @@ import { data } from "@/data/pages";
 
 const pageName = "wind-energy";
 
+export const metadata = {
+  title: "Wind Energy",
+  description:
+    "Bonema Engineering. Let's collaborate to drive positive change, reduce carbon footprints, and build a brighter tomorrow",
+};
+
 const page = () => {
   const {
     windEnergy: { billboard, offShore, onShore, summary },

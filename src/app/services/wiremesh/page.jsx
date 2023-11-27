@@ -2,6 +2,12 @@ import { data } from "@/data/pages";
 
 const pageName = "wire-mesh";
 
+export const metadata = {
+  title: "Wire Mesh Solutions",
+  description:
+    "Bonema Engineering. Let's collaborate to drive positive change, reduce carbon footprints, and build a brighter tomorrow",
+};
+
 const page = () => {
   return (
     <>

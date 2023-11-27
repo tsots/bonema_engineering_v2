@@ -54,7 +54,20 @@ header {
     position: relative;
 
     .logo {
-      flex: 1;
+      // @include mq()
+      // padding-block: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: auto;
+        height: 40px;
+      }
+
+      a {
+        display: inline;
+        width: initial;
+      }
     }
     nav {
       order: 2;
@@ -68,7 +81,7 @@ header {
       flex-direction: column;
       // overflow: hidden;
 
-      a {
+      & > a {
         display: block;
         width: 100%;
         color: white;

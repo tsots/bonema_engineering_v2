@@ -2,6 +2,12 @@ import { data } from "@/data/pages";
 
 const pageName = "utilities";
 
+export const metadata = {
+  title: "Utilities Management",
+  description:
+    "Bonema Engineering. Let's collaborate to drive positive change, reduce carbon footprints, and build a brighter tomorrow",
+};
+
 const page = () => {
   const {
     utilities: { billboard, benefits, features, summary },

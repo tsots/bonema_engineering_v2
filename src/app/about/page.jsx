@@ -2,6 +2,12 @@ import { data } from "@/data/pages";
 
 const pageName = "about";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Bonema Engineering. Let's collaborate to drive positive change, reduce carbon footprints, and build a brighter tomorrow",
+};
+
 const page = () => {
   return (
     <>

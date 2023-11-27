@@ -38,7 +38,7 @@ const Header = () => {
     <header>
       <div className="container">
         <a href="/" className="logo">
-          Tsotetsi
+          <img src="/logo.svg" alt="" />
         </a>
         <nav ref={navRef}>
           {pageLinks.map((i, index) => (

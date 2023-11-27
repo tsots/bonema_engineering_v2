@@ -2,6 +2,12 @@ import { data } from "@/data/pages";
 
 const pageName = "storage";
 
+export const metadata = {
+  title: "Bonema Inverters",
+  description:
+    "Bonema Engineering. Let's collaborate to drive positive change, reduce carbon footprints, and build a brighter tomorrow",
+};
+
 const page = () => {
   const {
     storage: { billboard, batteries, other, summary },
