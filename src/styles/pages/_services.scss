@@ -1,0 +1,38 @@
+.services {
+  .billboard {
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $xs-scr)
+      minmax(1rem, 1fr);
+
+    padding-block: 3rem;
+
+    > h1,
+    p {
+      grid-column: 2/3;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    @include mq(sm) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $sm-scr)
+        minmax(1rem, 1fr);
+    }
+
+    @include mq(md) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $md-scr)
+        minmax(1rem, 1fr);
+
+      h1 {
+        text-align: initial;
+      }
+    }
+  }
+}

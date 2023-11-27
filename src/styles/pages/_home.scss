@@ -1,32 +1,195 @@
-.container.greetings {
-  padding-block: 4rem 1.5rem;
+body {
+  overflow-x: hidden;
 }
 
-.container.services,
-.container.benefits,
-.container.features,
-.container.greeting {
-  padding-block: 1.5rem 4rem;
+.home {
+  // .billboard Section
+  .billboard {
+    img {
+      mix-blend-mode: screen;
+    }
+    .desktop {
+      @include mq(md) {
+        display: grid;
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($md-scr/2))
+          minmax(0, calc($md-scr/2))
+          minmax(1.2rem, 1fr);
 
-  display: grid;
-  column-gap: 2rem;
-  row-gap: 3rem;
-}
+        .content {
+          grid-column: 2/3;
+          display: grid;
+          align-content: center;
+        }
+        .image {
+          grid-column: 3/5;
+          width: clamp(300px, 100vw, 600px);
 
-.container.greeting > :not(.image),
-.card > :not(.image),
-.intro {
-  padding-inline: 1.2rem;
-}
+          display: grid;
+          place-items: center;
 
-.content,
-.card > :not(.image) {
-  display: grid;
-  row-gap: 0.5rem;
-}
+          img {
+            max-width: 100%;
+            display: block;
+            margin: auto;
+            mix-blend-mode: screen;
+          }
+        }
+      }
 
-.card {
-  display: grid;
-  row-gap: 0.5rem;
-  padding-block: 1.2em 1.2rem;
+      @include mq(lg) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($lg-scr/2))
+          minmax(0, calc($lg-scr/2))
+          minmax(1.2rem, 1fr);
+      }
+      @include mq(xl) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($xl-scr/2))
+          minmax(0, calc($xl-scr/2))
+          minmax(1.2rem, 1fr);
+
+        .content {
+          max-width: 80%;
+        }
+
+        img {
+          position: relative;
+          right: -100px;
+        }
+      }
+    }
+
+    .mobile {
+      @media (max-width: $md-scr) {
+        display: grid;
+        width: clamp(300px, 100vw, 500px);
+        margin-inline: auto;
+        > *:not(.image) {
+          padding: 1.2rem;
+        }
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  // Greeting Section
+
+  .container.greetings {
+    margin-block: 4rem 2rem;
+    display: grid;
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1.2rem, 1fr);
+    h2,
+    p {
+      grid-column: 2/3;
+    }
+  }
+
+  .mobile.container.greeting {
+    @media (max-width: $md-scr) {
+      display: grid;
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, $md-scr)
+        minmax(1.2rem, 1fr);
+
+      row-gap: 3rem;
+      margin-block: 4rem;
+
+      .content {
+        grid-column: 2/3;
+      }
+      .image {
+        grid-column: 1/4;
+
+        img {
+          max-height: 60vh;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .desktop.container.greeting {
+    @include mq(md) {
+      display: grid;
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, calc($md-scr/2))
+        minmax(0, calc($md-scr/2))
+        minmax(1.2rem, 1fr);
+
+      .content {
+        grid-column: 2/3;
+      }
+      .image {
+        grid-column: 3/-1;
+        padding-left: 3rem;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: bottom center;
+          max-height: 60vh;
+        }
+      }
+    }
+    @include mq(lg) {
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, calc($lg-scr/2))
+        minmax(0, calc($lg-scr/2))
+        minmax(1.2rem, 1fr);
+
+      .content {
+        margin-right: 4rem;
+      }
+
+      .image {
+        margin-left: 7rem;
+      }
+    }
+
+    @include mq(xl) {
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, calc($xl-scr/2))
+        minmax(0, calc($xl-scr/2))
+        minmax(1.2rem, 1fr);
+
+      .content {
+        margin-right: 7rem;
+      }
+
+      .image {
+        margin-left: 7rem;
+      }
+    }
+  }
+
+  &.accreditations {
+    margin-block: 4rem 2rem;
+    display: grid;
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      $xs-scr
+      minmax(1.2rem, 1fr);
+    .intro {
+      grid-column: 2/3;
+    }
+    @include mq(md) {
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, $md-scr)
+        minmax(1.2rem, 1fr);
+    }
+  }
 }

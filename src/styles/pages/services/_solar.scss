@@ -1,0 +1,222 @@
+.solar.billboard,
+.wind-energy.billboard {
+  .mobile {
+    display: grid;
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      minmax(0, $xs-scr)
+      minmax(1.2rem, 1fr);
+
+    row-gap: 3rem;
+    padding-block: 3rem;
+    h1 {
+      order: 1;
+      grid-column: 2/3;
+      text-align: center;
+    }
+    .image {
+      order: 2;
+      grid-column: 2/3;
+
+      img {
+        max-width: 80%;
+        height: auto;
+        // object-fit: cover;
+      }
+    }
+    p {
+      order: 3;
+      grid-column: 2/3;
+    }
+
+    @include mq(sm) {
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, $sm-scr)
+        minmax(1.2rem, 1fr);
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  .desktop {
+    @include mq(md) {
+      padding-block: 3rem;
+      display: grid;
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, calc($md-scr/2))
+        minmax(0, calc($md-scr/2))
+        minmax(1.2rem, 1fr);
+
+      place-items: center;
+
+      .content {
+        grid-column: 2/3;
+
+        text-align: initial;
+      }
+      .image {
+        grid-column: 3/-1;
+        // min-height: 40vh;
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-width: 80%;
+          height: auto;
+          // object-fit: cover;
+        }
+      }
+
+      @include mq(lg) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($lg-scr/2))
+          minmax(0, calc($lg-scr/2))
+          minmax(1.2rem, 1fr);
+      }
+
+      @include mq(xl) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($xl-scr/2))
+          minmax(0, calc($xl-scr/2))
+          minmax(1.2rem, 1fr);
+      }
+    }
+  }
+}
+
+// .solar.billboard h1,
+// .solar.billboard p {
+//   padding: 2rem 1rem;
+//   text-align: center;
+//   // width: clamp(400px, 5vh + 1rem, 600px);
+//   margin-inline: auto;
+// }
+
+// .solar.billboard .image {
+//   width: clamp(300px, 5vh + 1rem, 500px);
+//   margin-inline: auto;
+
+//   display: grid;
+//   place-items: center;
+
+//   img {
+//     display: block;
+//     margin-inline: auto;
+//   }
+// }
+
+// .container {
+//   &.batteries,
+//   &.thermal-systems,
+//   &.solar-farms,
+//   &.off-grid,
+//   &.consumer-products,
+//   &.summary {
+//     padding: 2rem 1rem;
+//   }
+// }
+
+.batteries.solar {
+  padding-block: 4rem;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, $xs-scr)
+    minmax(1rem, 1fr);
+
+  .container.batteries,
+  .benefits-cards {
+    grid-column: 2/3;
+  }
+
+  @include mq(sm) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $sm-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(md) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1rem, 1fr);
+
+    .benefits-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include mq(lg) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $lg-scr)
+      minmax(1rem, 1fr);
+
+    .benefits-cards {
+      padding-block: 3rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      column-gap: 15rem;
+      row-gap: 4rem;
+    }
+  }
+}
+
+.thermal-systems.solar,
+.solar-farms.solar,
+.off-grid.solar,
+.consumer-products.solar,
+.summary.solar {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, $xs-scr)
+    minmax(1rem, 1fr);
+
+  .intro,
+  .cards {
+    grid-column: 2/3;
+  }
+
+  @include mq(sm) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $sm-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(md) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1rem, 1fr);
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 15rem;
+    }
+  }
+
+  @include mq(lg) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $lg-scr)
+      minmax(1rem, 1fr);
+
+    .cards {
+      display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      // column-gap: 10rem;
+    }
+  }
+}

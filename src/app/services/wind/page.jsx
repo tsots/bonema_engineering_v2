@@ -46,11 +46,11 @@ const Billboard = ({ billboard }) => {
 const OnShore = ({ onShore }) => {
   return (
     <section className={`on-shore ${pageName}`}>
-      <div className="container on-shore-intro">
+      <div className="container intro">
         <h2>{onShore.heading}</h2>
         <p>{onShore.text}</p>
       </div>
-      <div className="container on-shore-cards">
+      <div className="container cards">
         {onShore.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -64,12 +64,12 @@ const OnShore = ({ onShore }) => {
 
 const OffShore = ({ offShore }) => {
   return (
-    <section className={`on-shore ${pageName}`}>
-      <div className="container off-shore-intro">
+    <section className={`off-shore ${pageName}`}>
+      <div className="container off-shore intro">
         <h2>{offShore.heading}</h2>
         <p>{offShore.text}</p>
       </div>
-      <div className="container on-shore-cards">
+      <div className="container off-shore cards">
         {offShore.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -84,7 +84,7 @@ const OffShore = ({ offShore }) => {
 const Summary = ({ summary }) => {
   return (
     <section className={`summary ${pageName}`}>
-      <div className="container summary">
+      <div className="container intro">
         <p>{summary}</p>
       </div>
     </section>

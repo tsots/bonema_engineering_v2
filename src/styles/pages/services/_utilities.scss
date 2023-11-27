@@ -1,0 +1,282 @@
+// .utilities {
+//   @media (max-width: 768px) {
+//     .mobile.billboard > *:not(.image) {
+//       padding-inline: 1.2rem;
+//     }
+//     .mobile.billboard {
+//       display: grid;
+//       padding-block: 2rem;
+
+//       h1 {
+//         order: 1;
+//       }
+
+//       p {
+//         order: 3;
+//       }
+
+//       .image {
+//         order: 2;
+//         width: clamp(300px, 5vh + 1rem, 500px);
+//         margin-inline: auto;
+
+//         display: grid;
+//         place-items: center;
+//       }
+//     }
+//   }
+
+//   .desktop.billboard {
+//     display: none;
+
+//     @include mq(md) {
+//       display: grid;
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, calc($md-scr/2))
+//         minmax(0, calc($md-scr/2))
+//         minmax(1.2rem, 1fr);
+//     }
+
+//     .content {
+//       display: grid;
+//       align-content: center;
+//       grid-column: 2/3;
+//     }
+
+//     .image {
+//       grid-column: 3/4;
+//       //   width: clamp(500px, 5vh + 1rem, 700px);
+//       margin-inline: auto;
+
+//       display: grid;
+//       place-items: center;
+
+//       img {
+//         max-width: 100%;
+//         display: block;
+//         margin-inline: auto;
+//       }
+//     }
+
+//     @include mq(lg) {
+//       // display: grid;
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, calc($lg-scr/2))
+//         minmax(0, calc($lg-scr/2))
+//         minmax(1.2rem, 1fr);
+//     }
+//   }
+
+//   .benefits-cards,
+//   .features-cards {
+//     @include mq(md) {
+//       .cards {
+//         padding-inline: o;
+//       }
+//       display: grid;
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, calc($md-scr/2))
+//         minmax(0, calc($md-scr/2))
+//         minmax(1.2rem, 1fr);
+
+//       .card:nth-of-type(odd) {
+//         grid-column: 2/3;
+//         align-content: start;
+//       }
+//       .card:nth-of-type(even) {
+//         grid-column: 3/4;
+//         align-content: start;
+//       }
+//     }
+
+//     @include mq(lg) {
+//       display: grid;
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, calc($lg-scr/2))
+//         minmax(0, calc($lg-scr/2))
+//         minmax(1.2rem, 1fr);
+//     }
+
+//     @include mq(xl) {
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, calc($xl-scr/2))
+//         minmax(0, calc($xl-scr/2))
+//         minmax(1.2rem, 1fr);
+//     }
+//   }
+
+//   .summary {
+//     @include mq(md) {
+//       display: grid;
+//       grid-template-columns:
+//         minmax(1.2rem, 1fr)
+//         minmax(0, $md-scr)
+//         minmax(1.2rem, 1fr);
+
+//       p {
+//         grid-column: 2/3;
+//       }
+//     }
+
+//     // @include mq(lg) {
+//     //   grid-template-columns:
+//     //     minmax(1.2rem, 1fr)
+//     //     minmax(0, $lg-scr)
+//     //     minmax(1.2rem, 1fr);
+//     // }
+
+//     // @include mq(xl) {
+//     //   grid-template-columns:
+//     //     minmax(1.2rem, 1fr)
+//     //     minmax(0, $xl-scr)
+//     //     minmax(1.2rem, 1fr);
+//     // }
+//   }
+// }
+
+.utilities.billboard {
+  .mobile {
+    display: grid;
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      minmax(0, $xs-scr)
+      minmax(1.2rem, 1fr);
+
+    row-gap: 3rem;
+    padding-block: 3rem;
+    h1 {
+      order: 1;
+      grid-column: 2/3;
+      text-align: center;
+    }
+    .image {
+      order: 2;
+      grid-column: 2/3;
+
+      img {
+        max-width: 80%;
+        height: auto;
+        // object-fit: cover;
+      }
+    }
+    p {
+      order: 3;
+      grid-column: 2/3;
+    }
+
+    @include mq(sm) {
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, $sm-scr)
+        minmax(1.2rem, 1fr);
+    }
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  .desktop {
+    @include mq(md) {
+      padding-block: 3rem;
+      display: grid;
+      grid-template-columns:
+        minmax(1.2rem, 1fr)
+        minmax(0, calc($md-scr/2))
+        minmax(0, calc($md-scr/2))
+        minmax(1.2rem, 1fr);
+
+      place-items: center;
+
+      .content {
+        grid-column: 2/3;
+
+        text-align: initial;
+      }
+      .image {
+        grid-column: 3/-1;
+        // min-height: 40vh;
+        display: flex;
+        justify-content: center;
+
+        img {
+          max-width: 80%;
+          height: auto;
+          // object-fit: cover;
+        }
+      }
+
+      @include mq(lg) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($lg-scr/2))
+          minmax(0, calc($lg-scr/2))
+          minmax(1.2rem, 1fr);
+      }
+
+      @include mq(xl) {
+        grid-template-columns:
+          minmax(1.2rem, 1fr)
+          minmax(0, calc($xl-scr/2))
+          minmax(0, calc($xl-scr/2))
+          minmax(1.2rem, 1fr);
+      }
+    }
+  }
+}
+
+.utilities.benefits,
+.utilities.features {
+  padding-block: 4rem 3rem;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, $xs-scr)
+    minmax(1rem, 1fr);
+
+  .cards {
+    grid-column: 2/3;
+    display: grid;
+    row-gap: 2rem;
+  }
+
+  @include mq(sm) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $sm-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(md) {
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1.2rem, 1fr);
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5rem;
+      row-gap: 5rem;
+    }
+  }
+
+  @include mq(lg) {
+    grid-template-columns:
+      minmax(1.2rem, 1fr)
+      minmax(0, $lg-scr)
+      minmax(1.2rem, 1fr);
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 5rem;
+      row-gap: 5rem;
+    }
+  }
+}

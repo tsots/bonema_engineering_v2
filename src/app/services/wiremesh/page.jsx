@@ -51,7 +51,7 @@ const Features = () => {
   // console.log(wireMesh, null, 2);
   return (
     <section className={`features ${pageName}`}>
-      <div className="container features">
+      <div className="container cards features">
         {features.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -70,7 +70,7 @@ const Benefits = () => {
   // console.log(wireMesh, null, 2);
   return (
     <section className={`benefits ${pageName}`}>
-      <div className="container benefits">
+      <div className="container cards benefits">
         {benefits.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -89,7 +89,7 @@ const Summary = () => {
   // console.log(wireMesh, null, 2);
   return (
     <section className={`summary ${pageName}`}>
-      <div className="container summary">
+      <div className="container intro">
         <p>{summary}</p>
       </div>
     </section>

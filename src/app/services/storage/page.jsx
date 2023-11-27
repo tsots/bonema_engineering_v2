@@ -1,6 +1,6 @@
 import { data } from "@/data/pages";
 
-const pageName = "utilities";
+const pageName = "storage";
 
 const page = () => {
   const {
@@ -46,11 +46,11 @@ const Billboard = ({ billboard }) => {
 const Batteries = ({ batteries }) => {
   return (
     <section className={`batteries ${pageName}`}>
-      <div className="container batteries">
+      <div className="container intro batteries">
         <h2>{batteries.heading}</h2>
         <p>{batteries.text}</p>
       </div>
-      <div className="container benefits-cards">
+      <div className="container benefits cards">
         {batteries.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -66,14 +66,14 @@ const Other = ({ other }) => {
   return (
     <section className={`other ${pageName}`}>
       {other.heading ? (
-        <div className="container batteries">
+        <div className="container intro">
           {other.heading ? <h2>{other.heading}</h2> : " "}
           {other.text ? <p>{other.text}</p> : " "}
         </div>
       ) : (
         ""
       )}
-      <div className="container other-cards">
+      <div className="container cards other">
         {other.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -88,7 +88,7 @@ const Other = ({ other }) => {
 const Summary = ({ summary }) => {
   return (
     <section className={`summary ${pageName}`}>
-      <div className="container summary">
+      <div className="container intro">
         <p>{summary}</p>
       </div>
     </section>

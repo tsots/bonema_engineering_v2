@@ -16,7 +16,6 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Coochie className="coochie" />
       <Billboard />
       <Greeting />
       <Introductin />
@@ -26,11 +25,7 @@ export default function Home() {
     </>
   );
 }
-
-const Coochie = ({ className }) => {
-  return <div className={className}>We are much smarter</div>;
-};
-
+//
 const Billboard = () => {
   const {
     home: { billboard },
@@ -41,6 +36,9 @@ const Billboard = () => {
       <div className="container billboard">
         <div className="mobile">
           <h1>{billboard.heading}</h1>
+          <div className="image">
+            <img src={billboard.image} alt="" />
+          </div>
           <p dangerouslySetInnerHTML={{ __html: billboard.text }} />
         </div>
         <div className="desktop">
@@ -48,7 +46,9 @@ const Billboard = () => {
             <h1>{billboard.heading}</h1>
             <p dangerouslySetInnerHTML={{ __html: billboard.text }} />
           </div>
-          <div className="image"></div>
+          <div className="image">
+            <img src={billboard.image} alt="" />
+          </div>
         </div>
       </div>
     </section>
@@ -61,19 +61,21 @@ const Greeting = () => {
   } = data;
   return (
     <section className={`greetings ${pageName}`}>
-      <div className="container greetings">
+      <div className="container intro greetings">
         <h2>{services.heading}</h2>
         <p>{services.text}</p>
       </div>
 
       <div className="container services">
-        {services.services.map((item, index) => (
-          <div className="card" key={index}>
-            <h4>{item.heading}</h4>
-            <p>{item.text}</p>
-            <Link href={item.url}>Read more ...</Link>
-          </div>
-        ))}
+        <div className="cards">
+          {services.services.map((item, index) => (
+            <div className="card" key={index}>
+              <h4>{item.heading}</h4>
+              <p>{item.text}</p>
+              <Link href={item.url}>Read more ...</Link>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -87,7 +89,7 @@ const Introductin = () => {
   } = data;
   return (
     <>
-      <section>
+      <section className={`${pageName}`}>
         <div className="mobile container greeting">
           <div className="content">
             <h2>{whoWeAre.heading}</h2>
@@ -102,7 +104,7 @@ const Introductin = () => {
           </div>
         </div>
 
-        <div className="container desktop container greeting">
+        <div className="desktop container greeting">
           <div className="content">
             <div className="who-we-are">
               <h2>{whoWeAre.heading}</h2>
@@ -129,12 +131,14 @@ const Benefits = () => {
   return (
     <section className={`benefits ${pageName}`}>
       <div className="container benefits">
-        {benefits.map((item, index) => (
-          <div className="card" key={index}>
-            <h4>{item.heading}</h4>
-            <p>{item.text}</p>
-          </div>
-        ))}
+        <div className="cards">
+          {benefits.map((item, index) => (
+            <div className="card" key={index}>
+              <h4>{item.heading}</h4>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -150,12 +154,14 @@ const Features = () => {
         <h2>{features.heading}</h2>
       </div>
       <div className="container features">
-        {features.features.map((item, index) => (
-          <div className="card" key={index}>
-            <h4>{item.heading}</h4>
-            <p>{item.text}</p>
-          </div>
-        ))}
+        <div className="cards">
+          {features.features.map((item, index) => (
+            <div className="card" key={index}>
+              <h4>{item.heading}</h4>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

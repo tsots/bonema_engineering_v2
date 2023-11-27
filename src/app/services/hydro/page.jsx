@@ -1,6 +1,6 @@
 import { data } from "@/data/pages";
 
-const pageName = "utilities";
+const pageName = "hydro";
 
 const page = () => {
   const {
@@ -76,7 +76,7 @@ const OtherHydro = ({ other }) => {
         <h2>{thermalSystems.heading}</h2>
         <p>{thermalSystems.text}</p>
       </div> */}
-      <div className="container other-hydro-cards">
+      <div className="container other-hydro cards">
         {other.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -91,7 +91,7 @@ const OtherHydro = ({ other }) => {
 const Summary = ({ summary }) => {
   return (
     <section className={`summary ${pageName}`}>
-      <div className="container summary">
+      <div className="container intro">
         <p>{summary}</p>
       </div>
     </section>

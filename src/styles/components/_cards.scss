@@ -1,0 +1,184 @@
+.home {
+  .container.services,
+  .container.features,
+  .container.benefits {
+    padding-block: 3rem;
+    // background-color: teal;
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $xl-scr)
+      minmax(1rem, 1fr);
+
+    //   grid-template-columns: auto auto auto;
+    //   height: 100%;
+
+    .cards {
+      grid-column: 2/3;
+      max-width: 350px;
+      margin-inline: auto;
+
+      display: grid;
+      row-gap: 3rem;
+    }
+
+    @include mq(sm) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $sm-scr)
+        minmax(1rem, 1fr);
+    }
+
+    @include mq(md) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $md-scr)
+        minmax(1rem, 1fr);
+
+      .cards {
+        grid-column: 2/3;
+        max-width: 100%;
+
+        display: grid;
+        row-gap: 3rem;
+
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+      }
+    }
+
+    @include mq(lg) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $lg-scr)
+        minmax(1rem, 1fr);
+
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+      }
+    }
+
+    @include mq(xl) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $xl-scr)
+        minmax(1rem, 1fr);
+
+      .cards {
+        column-gap: 10rem;
+        row-gap: 5rem;
+      }
+    }
+
+    @include mq(lg) {
+      padding-block: 5rem;
+    }
+
+    .cards {
+      h4 {
+        margin-block-end: 1rem;
+      }
+
+      p {
+        margin-block: 1rem;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: #222;
+        background-color: $accent-clr;
+        margin-block-start: 1rem;
+        padding: 0.4rem 1.2rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}
+
+.services.services {
+  .container.services {
+    padding-block: 3rem 5rem;
+    display: grid;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $xs-scr)
+      minmax(1rem, 1fr);
+
+    .cards {
+      grid-column: 2/3;
+
+      .card {
+        margin-block: 3rem;
+
+        max-width: 400px;
+        margin-inline: auto;
+      }
+    }
+
+    @include mq(sm) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $sm-scr)
+        minmax(1rem, 1fr);
+    }
+
+    @include mq(md) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $md-scr)
+        minmax(1rem, 1fr);
+
+      .cards {
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .card {
+          max-width: 350px;
+          margin-inline: initial;
+        }
+      }
+    }
+
+    @include mq(lg) {
+      grid-template-columns:
+        minmax(1rem, 1fr)
+        minmax(0, $lg-scr)
+        minmax(1rem, 1fr);
+
+      .cards {
+        .card {
+          max-width: 400px;
+        }
+      }
+    }
+  }
+
+  .card {
+    h4 {
+      margin-block-end: 1rem;
+    }
+
+    p {
+      margin-block: 1rem;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: #222;
+      background-color: $accent-clr;
+      margin-block-start: 1rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 0.8rem;
+      transition: background-color 300ms;
+
+      &:hover {
+        background-color: lighten($accent-clr, 15);
+      }
+    }
+  }
+}

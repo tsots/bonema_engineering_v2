@@ -1,6 +1,6 @@
 import { data } from "@/data/pages";
 
-const pageName = "utilities";
+const pageName = "solar";
 
 const page = () => {
   const {
@@ -78,11 +78,11 @@ const SolarPanels = ({ solarPanels }) => {
 const ThermalSystems = ({ thermalSystems }) => {
   return (
     <section className={`thermal-systems ${pageName}`}>
-      <div className="container thermal-systems">
+      <div className="container intro thermal-systems">
         <h2>{thermalSystems.heading}</h2>
         <p>{thermalSystems.text}</p>
       </div>
-      <div className="container thermal-systems-cards">
+      <div className="container thermal-systems cards">
         {thermalSystems.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -97,11 +97,11 @@ const ThermalSystems = ({ thermalSystems }) => {
 const SolarFarms = ({ solarFarms }) => {
   return (
     <section className={`solar-farms ${pageName}`}>
-      <div className="container solar-farms">
+      <div className="container intro solar-farms">
         <h2>{solarFarms.heading}</h2>
         <p>{solarFarms.text}</p>
       </div>
-      <div className="container solar-farms-cards">
+      <div className="container solar-farms cards">
         {solarFarms.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -116,11 +116,11 @@ const SolarFarms = ({ solarFarms }) => {
 const OffGrid = ({ offGrid }) => {
   return (
     <section className={`off-grid ${pageName}`}>
-      <div className="container off-grid">
+      <div className="container intro off-grid">
         <h2>{offGrid.heading}</h2>
         <p>{offGrid.text}</p>
       </div>
-      <div className="container off-grid-cards">
+      <div className="container off-grid cards">
         {offGrid.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -135,11 +135,11 @@ const OffGrid = ({ offGrid }) => {
 const ConsumerProducts = ({ consumerProducts }) => {
   return (
     <section className={`consumer-products ${pageName}`}>
-      <div className="container consumer-products">
+      <div className="container intro consumer-products">
         <h2>{consumerProducts.heading}</h2>
         <p>{consumerProducts.text}</p>
       </div>
-      <div className="container consumer-products-cards">
+      <div className="container consumer-products cards">
         {consumerProducts.types.map((item, index) => (
           <div className="card" key={index}>
             <h4>{item.heading}</h4>
@@ -173,7 +173,7 @@ const BuildingIntegrated = ({ buildingIntegrated }) => {
 const Summary = ({ summary }) => {
   return (
     <section className={`summary ${pageName}`}>
-      <div className="container summary">
+      <div className="container intro">
         <p>{summary}</p>
       </div>
     </section>

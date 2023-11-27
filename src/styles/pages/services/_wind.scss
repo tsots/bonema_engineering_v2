@@ -1,0 +1,83 @@
+section.wind-energy {
+  padding-block: 3rem;
+}
+
+.on-shore.wind-energy,
+.off-shore.wind-energy {
+  padding-block: 2rem 3rem;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, $xs-scr)
+    minmax(1rem, 1fr);
+
+  .intro,
+  .cards {
+    grid-column: 2/3;
+  }
+
+  .cards {
+    .card {
+      margin-block: 2rem;
+    }
+  }
+
+  @include mq(sm) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $sm-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(md) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1rem, 1fr);
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 15rem;
+    }
+  }
+
+  @include mq(lg) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $lg-scr)
+      minmax(1rem, 1fr);
+  }
+}
+
+.summary {
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(0, $xs-scr)
+    minmax(1rem, 1fr);
+  .intro {
+    grid-column: 2/3;
+  }
+
+  @include mq(sm) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $sm-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(md) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $md-scr)
+      minmax(1rem, 1fr);
+  }
+
+  @include mq(lg) {
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(0, $lg-scr)
+      minmax(1rem, 1fr);
+  }
+}
